@@ -1,0 +1,95 @@
+
+  .custom-navbar {
+    background-color: #2E4A21;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (min-width: 992px) {
+    .custom-navbar {
+      height: 110px;
+    }
+  }
+
+  @media (max-width: 992px) {
+
+    .logo-image {
+      width: 40px !important;
+      height: 60px !important;
+    }
+
+    .logo-divider {
+      height: 50px !important;
+    }
+
+    .logo-main-title {
+      font-size: 25px !important;
+    }
+  }
+
+  .custom-nav {
+    padding-right: 40px;
+  }
+
+  .custom-logo {
+    color: white !important;
+    font-size: 24px;
+    margin-left: 20px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .logo-image {
+    width: 60px;
+    height: 85px;
+    margin-right: 8px;
+  }
+  
+  .logo-divider {
+    width: 1px;
+    height: 60px;
+    background-color: #FBD786;
+    margin-right: 16px;
+  }
+  
+  .logo-main-title {
+    font-size: 30px;
+    color: #FBD786;
+    font-weight: bold;
+  }
+  
+  .logo-subtitle {
+    font-size: 18px;
+    color: #FBD786;
+    text-align: right;
+  }
+
+  .custom-nav-link {
+    background: none;
+    border: none;
+    font-size: 25px;
+    font-weight: 600;
+    color: white !important;
+    cursor: pointer;
+    padding-bottom: 6px;
+    margin-left: 20px;
+    transition: border-bottom 0.2s ease;
+  }
+  
+  .custom-nav-link.active {
+    border-bottom: 3px solid #FBD786;
+    color: #FBD786 !important;
+  }
+
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6); /* 테두리 흰색 */
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }

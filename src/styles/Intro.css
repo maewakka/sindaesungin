@@ -1,0 +1,220 @@
+@font-face {
+    font-family: 'NotoSerifKR-Bold';
+    src: local('NotoSerifKR-Bold'), url('../fonts/NotoSerifKR-Bold.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'NotoSerifKR-Medium';
+    src: local('NotoSerifKR-Medium'), url('../fonts/NotoSerifKR-Medium.otf') format('opentype');
+  }
+
+
+.intro-page {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: 'NotoSerifKR-Bold', serif;
+}
+  
+  .intro-left-container {
+    /* width: 40%; */
+    /* height: 90%; */
+    margin-top: 7%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .intro-left-first {
+    width: 100%;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .first-wrap {
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    white-space: nowrap; /* 박스 안에서 줄바꿈 금지 */
+    font-size: 40px ;
+    color: white;
+    background-color: #BADA55;
+  }
+  
+  .intro-left-second {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .second-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+    color: #0B3910;
+  }
+  
+  .intro-left-third {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: #6E1919;
+  }
+  
+  .intro-left-fourth {
+    font-size: 16px;
+    color: #85997E;
+  }
+  
+  .fourth-span {
+    font-weight: bolder;
+  }
+  
+  .intro-right-container {
+    width: 40%;
+    height: 90%;
+    display: flex;
+    margin-top: 7%;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  
+  .sogae-image {
+    width: 600px;
+    /* height: 650px; */
+    object-fit: fit;
+  }
+
+  .res-content {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    color: #8B0000;
+  }
+  
+  .res-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 47px;
+  }
+  
+  .res-text-img {
+    width: 47px;
+    margin-right: 5px;
+    padding-top: 10px;
+  }
+  
+  .phone-text {
+    font-size: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .intro-page {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .intro-left-container {
+      margin-top: -10px;
+    }
+   
+    .intro-right-container {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      margin-top: 113px;
+      padding: 0;
+    }
+  
+    .intro-left-container {
+      padding: 20px 16px;
+    }
+  
+    .intro-left-first {
+      margin-bottom: 10px;
+    }
+  
+    .first-wrap {
+      font-size: 18px;
+      text-align: center;
+      white-space: normal;
+      padding-left: 5px;
+      padding-right: 5px;
+      margin: 3px;
+      border-radius: 0;
+      line-height: 1.5;
+    }
+  
+    .second-wrap {
+      font-size: 14px;
+      text-align: center;
+      line-height: 1.6;
+    }
+  
+    .intro-left-third {
+      font-size: 16px;
+      text-align: center;
+    }
+  
+    .sogae-image {
+      content: url('/public/sogae_mobile.png');
+      width: 350px;
+      height: 280px;
+      margin-top: 10px;
+    }
+  
+    .res-text {
+      flex-direction: column;
+      font-size: 20px;
+      margin-top: 12px;
+      gap: 4px;
+    }
+
+    .res-content {
+      align-items: center;
+      justify-content: center;
+      font-size: x-small;
+    }
+  
+    .res-text-img {
+      width: 36px;
+      margin-bottom: 4px;
+      padding: 0;
+    }
+  
+    .phone-text {
+      width: 350px;
+      font-size: 14px;
+      text-align: center;
+      gap: 5px;
+    }
+  }
+  
