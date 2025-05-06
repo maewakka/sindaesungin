@@ -25,11 +25,11 @@ jobs:
       - name: Build
         run: CI=false npm run build
 
-      - name: Show full directory tree from root
+      - name: Backup existing CNAME
         run: |
-          sudo apt-get update
-          sudo apt-get install tree
-          tree -L 3
+          git fetch origin gh-pages
+          git checkout origin/gh-pages -- CNAME
+          mv CNAME ./build/
           
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
