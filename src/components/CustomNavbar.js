@@ -14,7 +14,7 @@ const CustomNavbar = ({ activeKey, onNavClick }) => {
           <img src="/ginseng-logo.png" alt="ginseng" className="logo-image" />
           <div className="logo-divider" />
           <div className="logo-text">
-            <div className="logo-main-title">신대성인삼숯불갈  비</div>
+            <div className="logo-main-title">신대성인삼숯불갈 비</div>
             <div className="logo-subtitle">행복한 한 입</div>
           </div>
         </div>
