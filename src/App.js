@@ -7,7 +7,7 @@ import Menu from "./pages/Menu";
 import Blog from "./pages/Blog";
 import Location from "./pages/Location";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles/App.css";
+import styles from "./styles/App.module.css";
 
 const App = () => {
   const anchors = ["main", "intro", "menu", "blog", "location"];
@@ -27,19 +27,19 @@ const App = () => {
         render={() => {
           return (
             <ReactFullpage.Wrapper>
-              <div className="section">
+              <div className={styles.section}>
                 <Main />
               </div>
-              <div className="section">
+              <div className={styles.section}>
                 <Intro />
               </div>
-              <div className="section">
+              <div className={styles.section}>
                 <Menu />
               </div>
-              <div className="section">
+              <div className={styles.section}>
                 <Blog />
               </div>
-              <div className="section">
+              <div className={styles.section}>
                 <Location />
               </div>
             </ReactFullpage.Wrapper>

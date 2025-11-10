@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import "../styles/Blog.css";
+import styles from "../styles/Blog.module.css";
 
 const Main = () => {
   const handleClick = (linkUrl) => {
@@ -13,11 +13,11 @@ const Main = () => {
       style={{ backgroundColor: "#f3ecdc" }}
       className="d-flex justify-content-center align-items-center vh-100"
     >
-      <div className="blog-container">
-        <img className="front-image" src="/front.png" alt="blog" />
-        <div className="blog-image-container">
-          <div className="blog-title">
-            <span className="blog-icon">
+      <div className={styles.blogContainer}>
+        <img className={styles.frontImage} src="/front.png" alt="blog" />
+        <div className={styles.blogImageContainer}>
+          <div className={styles.blogTitle}>
+            <span className={styles.blogIcon}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -47,9 +47,9 @@ const Main = () => {
             </span>
             <span>블로그 보러가기</span>
           </div>
-          <div className="img-cont">
+          <div className={styles.imgCont}>
             <img
-              className="blog-image"
+              className={styles.blogImage}
               src="/blog01.png"
               alt="blog"
               onClick={() =>
@@ -57,7 +57,7 @@ const Main = () => {
               }
             />
             <img
-              className="blog-image"
+              className={styles.blogImage}
               src="/blog02.png"
               alt="blog"
               onClick={() =>
@@ -65,7 +65,7 @@ const Main = () => {
               }
             />
             <img
-              className="blog-image"
+              className={styles.blogImage}
               src="/blog03.png"
               alt="blog"
               onClick={() =>

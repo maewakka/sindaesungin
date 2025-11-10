@@ -1,0 +1,216 @@
+@font-face {
+  font-family: 'NotoSerifKR-Bold';
+  src: local('NotoSerifKR-Bold'), url('../fonts/NotoSerifKR-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NotoSerifKR-Medium';
+  src: local('NotoSerifKR-Medium'), url('../fonts/NotoSerifKR-Medium.otf') format('opentype');
+}
+
+.introPage {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: 'NotoSerifKR-Bold', serif;
+}
+
+.introLeftContainer {
+  margin-top: 7%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.introLeftFirst {
+  width: 100%;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.firstWrap {
+  margin-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-size: 40px;
+  color: white;
+  background-color: #BADA55;
+}
+
+.introLeftSecond {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.secondWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 25px;
+  color: #0B3910;
+}
+
+.introLeftThird {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  color: #6E1919;
+}
+
+.introLeftFourth {
+  font-size: 16px;
+  color: #85997E;
+}
+
+.fourthSpan {
+  font-weight: bolder;
+}
+
+.introRightContainer {
+  width: 40%;
+  height: 90%;
+  display: flex;
+  margin-top: 7%;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.sogaeImage {
+  width: 600px;
+  object-fit: fit;
+}
+
+.resContent {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  color: #8B0000;
+}
+
+.resText {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 47px;
+}
+
+.resTextImg {
+  width: 47px;
+  margin-right: 5px;
+  padding-top: 10px;
+}
+
+.phoneText {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .introPage {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .introLeftContainer {
+    margin-top: -10px;
+  }
+
+  .introRightContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    margin-top: 113px;
+    padding: 0;
+  }
+
+  .introLeftContainer {
+    padding: 20px 16px;
+  }
+
+  .introLeftFirst {
+    margin-bottom: 10px;
+  }
+
+  .firstWrap {
+    font-size: 18px;
+    text-align: center;
+    white-space: normal;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 3px;
+    border-radius: 0;
+    line-height: 1.5;
+  }
+
+  .secondWrap {
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .introLeftThird {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .sogaeImage {
+    content: url('/public/sogae_mobile.png');
+    width: 350px;
+    height: 280px;
+    margin-top: 10px;
+  }
+
+  .resText {
+    flex-direction: column;
+    font-size: 20px;
+    margin-top: 12px;
+    gap: 4px;
+  }
+
+  .resContent {
+    align-items: center;
+    justify-content: center;
+    font-size: x-small;
+  }
+
+  .resTextImg {
+    width: 36px;
+    margin-bottom: 4px;
+    padding: 0;
+  }
+
+  .phoneText {
+    width: 350px;
+    font-size: 14px;
+    text-align: center;
+    gap: 5px;
+  }
+}
+

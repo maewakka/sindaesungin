@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import "../styles/Menu.css";
+import styles from "../styles/Menu.module.css";
 
 const menuSections = [
   {
@@ -121,7 +121,7 @@ const Menu = () => {
       }, 500);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [imageList.length]);
 
   return (
     <Container
@@ -129,26 +129,26 @@ const Menu = () => {
       style={{ backgroundColor: "#f3ecdc" }}
       className="d-flex justify-content-center align-items-center vh-100"
     >
-      <div className="menu-container">
-        <div className="menu-image-container">
+      <div className={styles.menuContainer}>
+        <div className={styles.menuImageContainer}>
           <img
-            className={`menu-image ${fadeClass}`}
+            className={`${styles.menuImage} ${fadeClass === "fade-out" ? styles.fadeOut : ""}`}
             src={imageList[imageIndex]}
             alt="menu"
           />
         </div>
-        <div className="menu-content">
+        <div className={styles.menuContent}>
           {menuSections.map((section, sectionIndex) => (
-            <div className="menu-section" key={sectionIndex}>
+            <div className={styles.menuSection} key={sectionIndex}>
               <h2>{section.title}</h2>
               <ul>
                 {section.items.map((item, index) => (
                   <li key={index}>
-                    <div className="menu-item-header">
-                      <span className="menu-item-name">{item.name}</span>
-                      <span className="menu-item-price">{item.price}</span>
+                    <div className={styles.menuItemHeader}>
+                      <span>{item.name}</span>
+                      <span>{item.price}</span>
                     </div>
-                    <p className="menu-item-description">{item.description}</p>
+                    <p className={styles.menuItemDescription}>{item.description}</p>
                   </li>
                 ))}
               </ul>
