@@ -13,37 +13,33 @@ import styles from "./styles/App.module.css";
 
 const App = () => {
   const sections = ["home", "intro", "menu", "blog", "location"];
-  const [activeIndex, setActiveIndex] = useState(() => {
-    // localStorage에서 이전에 방문한 페이지 불러오기
-    const saved = localStorage.getItem("currentPageIndex");
-    return saved !== null ? parseInt(saved, 10) : 0;
-  });
+  const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef(null);
   const isInitialMount = useRef(true);
   const activeAnchor = `#${sections[activeIndex]}`;
 
   const handleNavClick = (anchor) => {
-    const index = sections.indexOf(anchor.substring(1));
+    const sectionName = anchor.substring(1);
+    const index = sections.indexOf(sectionName);
     if (index !== -1) {
       setActiveIndex(index);
       if (swiperRef.current && swiperRef.current.swiper) {
-        swiperRef.current.swiper.slideTo(index, 0);
+        swiperRef.current.swiper.slideTo(index);
       }
     }
   };
 
-  // 페이지 변경 시 localStorage에 저장
-  useEffect(() => {
-    localStorage.setItem("currentPageIndex", activeIndex.toString());
-  }, [activeIndex]);
 
-  // 초기 로드 시 저장된 페이지로 이동
+  // 초기 로드 시 저장된 페이지로 이동 (스와이퍼 애니메이션 포함)
   useEffect(() => {
-    if (isInitialMount.current && swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideTo(activeIndex);
-      isInitialMount.current = false;
+    if (swiperRef.current && swiperRef.current.swiper) {
+      if (isInitialMount.current) {
+        swiperRef.current.swiper.slideTo(activeIndex);
+        isInitialMount.current = false;
+      }
     }
-  }, [activeIndex]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.activeIndex);
