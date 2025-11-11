@@ -101,26 +101,56 @@ const menuSections = [
   },
 ];
 
+// 메뉴 이미지 배열
+const menuImages = [
+  "/menu/menu01.png",
+  "/menu/menu02.png",
+  "/menu/menu03.png",
+  "/menu/menu04.png",
+];
+
 const Menu = () => {
   const [imageIndex, setImageIndex] = useState(0);
-  const [fadeClass, setFadeClass] = useState("fade-in");
-  const imageList = [
-    "/menu01.png",
-    "/menu02.png",
-    "/menu03.png",
-    "/menu04.png",
-  ];
+  const [sectionIndex, setSectionIndex] = useState(() => {
+    // localStorage에서 이전에 저장된 섹션 인덱스 불러오기
+    const saved = localStorage.getItem("menuSectionIndex");
+    return saved !== null ? parseInt(saved, 10) : 0;
+  });
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
+  // 섹션 변경 시 localStorage에 저장
   useEffect(() => {
+    localStorage.setItem("menuSectionIndex", sectionIndex.toString());
+  }, [sectionIndex]);
+
+  // 자동 이미지 전환
+  useEffect(() => {
+    if (menuImages.length === 0) return;
+    
     const interval = setInterval(() => {
-      setFadeClass("fade-out");
+      setIsTransitioning(true);
       setTimeout(() => {
-        setImageIndex((prevIndex) => (prevIndex + 1) % imageList.length);
-        setFadeClass("fade-in");
-      }, 500);
-    }, 3000);
+        setImageIndex((prevIndex) => (prevIndex + 1) % menuImages.length);
+        setIsTransitioning(false);
+      }, 1000);
+    }, 6000);
+    
     return () => clearInterval(interval);
-  }, [imageList.length]);
+  }, []);
+
+  const handlePrevSection = () => {
+    setSectionIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + menuSections.length) % menuSections.length
+    );
+  };
+
+  const handleNextSection = () => {
+    setSectionIndex((prevIndex) => (prevIndex + 1) % menuSections.length);
+  };
+
+  const currentSection = menuSections[sectionIndex];
+  const currentImage = menuImages[imageIndex];
 
   return (
     <div
@@ -136,28 +166,45 @@ const Menu = () => {
       <div className={styles.menuContainer}>
         <div className={styles.menuImageContainer}>
           <img
-            className={`${styles.menuImage} ${fadeClass === "fade-out" ? styles.fadeOut : ""}`}
-            src={imageList[imageIndex]}
+            className={`${styles.menuImage} ${isTransitioning ? styles.menuImageFade : styles.menuImageVisible}`}
+            src={currentImage}
             alt="menu"
           />
         </div>
         <div className={styles.menuContent}>
-          {menuSections.map((section, sectionIndex) => (
-            <div className={styles.menuSection} key={sectionIndex}>
-              <h2>{section.title}</h2>
-              <ul>
-                {section.items.map((item, index) => (
-                  <li key={index}>
-                    <div className={styles.menuItemHeader}>
-                      <span>{item.name}</span>
-                      <span>{item.price}</span>
-                    </div>
-                    <p className={styles.menuItemDescription}>{item.description}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className={styles.menuNavigation}>
+            <button
+              className={styles.navButton}
+              onClick={handlePrevSection}
+              aria-label="Previous menu section"
+            >
+              ‹
+            </button>
+            <div className={styles.menuTitle}>{currentSection.title}</div>
+            <button
+              className={styles.navButton}
+              onClick={handleNextSection}
+              aria-label="Next menu section"
+            >
+              ›
+            </button>
+          </div>
+
+          <div className={styles.menuItems}>
+            <ul>
+              {currentSection.items.map((item, index) => (
+                <li key={index}>
+                  <div className={styles.menuItemHeader}>
+                    <span>{item.name}</span>
+                    <span>{item.price}</span>
+                  </div>
+                  <p className={styles.menuItemDescription}>
+                    {item.description}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

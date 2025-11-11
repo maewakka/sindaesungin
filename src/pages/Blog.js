@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/Blog.module.css";
 
-const Main = () => {
+const Blog = () => {
+  const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // JSON 파일에서 블로그 데이터 불러오기
+    fetch("/blog-data.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setReviews(data.reviews);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("블로그 데이터 불러오기 실패:", error);
+        setIsLoading(false);
+      });
+  }, []);
+
   const handleClick = (linkUrl) => {
     window.open(linkUrl, "_blank", "noopener,noreferrer");
   };
@@ -51,31 +68,44 @@ const Main = () => {
             </span>
             <span>블로그 보러가기</span>
           </div>
-          <div className={styles.imgCont}>
-            <img
-              className={styles.blogImage}
-              src="/blog01.png"
-              alt="blog"
-              onClick={() =>
-                handleClick("https://blog.naver.com/to_dodo/223712754379")
-              }
-            />
-            <img
-              className={styles.blogImage}
-              src="/blog02.png"
-              alt="blog"
-              onClick={() =>
-                handleClick("https://blog.naver.com/nonger10/223346898674")
-              }
-            />
-            <img
-              className={styles.blogImage}
-              src="/blog03.png"
-              alt="blog"
-              onClick={() =>
-                handleClick("https://blog.naver.com/louisdor71/223018822995")
-              }
-            />
+
+          <div className={styles.reviewsContainer}>
+            {isLoading ? (
+              <div className={styles.loadingMessage}>로딩 중...</div>
+            ) : reviews.length === 0 ? (
+              <div className={styles.emptyMessage}>후기가 없습니다.</div>
+            ) : (
+              reviews.map((review) => (
+                <div
+                  key={review.id}
+                  className={styles.reviewCard}
+                  onClick={() => handleClick(review.link)}
+                >
+                  <div className={styles.reviewCardContent}>
+                    <div className={styles.reviewCardHeader}>
+                      <div className={styles.authorInfo}>
+                        <div className={styles.authorAvatar}>
+                          {review.author.charAt(0)}
+                        </div>
+                        <div className={styles.authorDetails}>
+                          <div className={styles.authorName}>{review.author}</div>
+                          <div className={styles.reviewDate}>{review.date}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className={styles.reviewTitle}>{review.title}</div>
+                    <div className={styles.reviewDescription}>
+                      {review.description}
+                    </div>
+                  </div>
+                  <img
+                    className={styles.reviewCardImage}
+                    src={review.thumbnailImage}
+                    alt={review.title}
+                  />
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>
@@ -83,4 +113,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Blog;
