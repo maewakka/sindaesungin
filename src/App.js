@@ -21,8 +21,10 @@ const App = () => {
         anchors={anchors}
         navigation
         onLeave={(origin, destination, direction) => {
-          const nextAnchor = `#${anchors[destination.index]}`;
-          setActiveAnchor(nextAnchor);
+          if (destination && destination.index !== undefined) {
+            const nextAnchor = `#${anchors[destination.index]}`;
+            setActiveAnchor(nextAnchor);
+          }
         }}
         render={() => {
           return (
