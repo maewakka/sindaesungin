@@ -1,17 +1,51 @@
 .appContainer {
+  flex: 1;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 110px);
+  margin-top: 110px;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
 .section {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
+  height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Chrome, Safari에서 스크롤바 숨기기 */
+.appContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.appContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.appContainer::-webkit-scrollbar-thumb {
+  background: rgba(46, 74, 33, 0.3);
+  border-radius: 4px;
+}
+
+.appContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(46, 74, 33, 0.5);
+}
+
+@media (max-width: 992px) {
+  .appContainer {
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+  }
+
+  .section {
+    min-height: auto;
+    height: auto;
+  }
 }

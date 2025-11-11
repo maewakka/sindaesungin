@@ -1,10 +1,9 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import styles from "../styles/Main.module.css";
 
 const Main = () => {
   return (
-    <Container className="d-flex justify-content-center align-items-center vh-100 container-fluid">
+    <div style={{ position: "relative", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
       <img src="/main.png" alt="main" className={styles.mainImage} />
       <div className={styles.mainCaption}>
         <div>
@@ -20,7 +19,7 @@ const Main = () => {
           </span>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 
