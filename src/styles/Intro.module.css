@@ -12,13 +12,22 @@
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 0;
+  padding: 40px 50px;
   box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
   font-family: 'NotoSerifKR-Bold', serif;
   background-color: #f3ecdc;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(46, 74, 33, 0.1);
+  border: 2px solid rgba(251, 215, 134, 0.2);
+  margin: 20px auto;
+  width: 95%;
+  height: 90%;
 }
 
 .introLeftContainer {
@@ -26,8 +35,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 30px;
-  background-color: #f3ecdc;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  width: 50%;
+  height: 100%;
+  flex: 1;
 }
 
 .topContent {
@@ -36,7 +51,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .introLeftFirst {
@@ -105,8 +120,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 30px;
-  background-color: #f3ecdc;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  width: 50%;
+  height: 100%;
+  flex: 1;
 }
 
 .sogaeImage {
@@ -149,19 +170,24 @@
 
 @media (max-width: 1024px) {
   .introPage {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     height: auto;
     min-height: 100%;
+    padding: 30px 20px;
+    gap: 0;
   }
 
   .introLeftContainer {
     padding: 30px 20px;
     min-height: 50vh;
+    width: 100%;
+    border-bottom: 2px solid rgba(251, 215, 134, 0.2);
   }
 
   .introRightContainer {
     padding: 30px 20px;
     min-height: 50vh;
+    width: 100%;
   }
 
   .firstWrap {
@@ -194,14 +220,18 @@
 
 @media (max-width: 768px) {
   .introPage {
-    grid-template-columns: 1fr;
-    height: auto;
-    min-height: 100%;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px 15px;
+    gap: 0;
   }
 
   .introLeftContainer {
     padding: 25px 15px;
-    min-height: auto;
+    height: auto;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 2px solid rgba(251, 215, 134, 0.2);
   }
 
   .introLeftFirst {
@@ -220,8 +250,8 @@
   }
 
   .introRightContainer {
-    padding: 25px 15px;
-    min-height: auto;
+    display: none;
+    width: 100%;
   }
 
   .sogaeImage {
@@ -244,31 +274,45 @@
 
 @media (max-width: 480px) {
   .introPage {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    padding: 16px 10px;
+    gap: 0;
   }
 
   .introLeftContainer {
     padding: 20px 10px;
+    width: 100%;
+    border-bottom: 2px solid rgba(251, 215, 134, 0.2);
   }
 
   .introLeftFirst {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 
   .firstWrap {
-    font-size: 16px;
-    padding: 6px 10px;
-    margin-bottom: 8px;
+    font-size: 22px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
   }
 
   .secondWrap {
-    font-size: 11px;
-    margin-bottom: 8px;
+    font-size: 15px;
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+
+  .introLeftThird {
+    font-size: 14px;
+  }
+
+  .introLeftFourth {
+    font-size: 13px;
   }
 
   .introRightContainer {
     padding: 20px 10px;
     gap: 15px;
+    width: 100%;
   }
 
   .sogaeImage {
@@ -276,15 +320,15 @@
   }
 
   .resText {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .resTextImg {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
   }
 
   .phoneText {
-    font-size: 10px;
+    font-size: 13px;
   }
 }

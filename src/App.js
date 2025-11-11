@@ -27,7 +27,7 @@ const App = () => {
     if (index !== -1) {
       setActiveIndex(index);
       if (swiperRef.current && swiperRef.current.swiper) {
-        swiperRef.current.swiper.slideTo(index);
+        swiperRef.current.swiper.slideTo(index, 0);
       }
     }
   };
@@ -59,11 +59,14 @@ const App = () => {
         mousewheel={{
           forceToAxis: true,
           sensitivity: 1,
+          releaseOnEdges: true,
         }}
         keyboard={{
           enabled: true,
         }}
         speed={800}
+        nested={true}
+        preventInteractionOnTransition={true}
         onSlideChange={handleSlideChange}
         className={styles.swiper}
         style={{ height: "calc(100vh - 110px)" }}

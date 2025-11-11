@@ -1,3 +1,4 @@
+/* 데스크톱 (992px 초과) */
 .swiper {
   width: 100%;
   height: calc(100vh - 110px);
@@ -13,6 +14,7 @@
   flex-shrink: 0;
 }
 
+/* 태블릿/모바일 (992px 이하) */
 @media (max-width: 992px) {
   .swiper {
     height: calc(100vh - 80px);
@@ -21,5 +23,19 @@
 
   .section {
     height: 100%;
+  }
+}
+
+/* 소형 모바일 (480px 이하) */
+@media (max-width: 480px) {
+  .swiper {
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+    width: 100%;
+  }
+
+  .section {
+    height: 100%;
+    width: 100%;
   }
 }

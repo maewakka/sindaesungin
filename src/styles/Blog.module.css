@@ -17,10 +17,11 @@
   flex-direction: row;
   align-items: stretch;
   justify-content: center;
-  background: #f3ecdc;
+  background: white;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(46, 74, 33, 0.12);
   overflow: hidden;
+  border: 2px solid rgba(251, 215, 134, 0.2);
 }
 
 .frontImage {
@@ -324,11 +325,11 @@
 
 @media (max-width: 768px) {
   .blogContainer {
-    width: 100%;
-    height: calc(100vh - 110px);
-    margin: 0;
+    width: 90%;
+    height: 90%;
+    margin: 5% auto;
     flex-direction: column;
-    border-radius: 0;
+    border-radius: 10px;
     background: white;
   }
 
