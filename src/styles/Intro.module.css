@@ -14,20 +14,29 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
   font-family: 'NotoSerifKR-Bold', serif;
+  background-color: #f3ecdc;
 }
 
 .introLeftContainer {
-  margin-top: 7%;
-  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 40px 30px;
+  background-color: #f3ecdc;
+}
+
+.topContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
 }
 
 .introLeftFirst {
@@ -41,14 +50,15 @@
 }
 
 .firstWrap {
-  margin-bottom: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-bottom: 15px;
+  padding: 14px 24px;
   border-radius: 8px;
-  white-space: nowrap;
-  font-size: 40px;
+  white-space: normal;
+  font-size: 32px;
   color: white;
   background-color: #BADA55;
+  text-align: center;
+  font-weight: bold;
 }
 
 .introLeftSecond {
@@ -56,7 +66,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .secondWrap {
@@ -64,9 +74,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  font-size: 25px;
+  margin-bottom: 18px;
+  font-size: 18px;
   color: #0B3910;
+  text-align: center;
+  line-height: 1.8;
 }
 
 .introLeftThird {
@@ -75,12 +87,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 25px;
+  font-size: 15px;
   color: #6E1919;
 }
 
 .introLeftFourth {
-  font-size: 16px;
+  font-size: 13px;
   color: #85997E;
 }
 
@@ -89,26 +101,30 @@
 }
 
 .introRightContainer {
-  width: 40%;
-  height: 90%;
   display: flex;
-  margin-top: 7%;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
+  padding: 40px 30px;
+  background-color: #f3ecdc;
 }
 
 .sogaeImage {
-  width: 600px;
-  object-fit: fit;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .resContent {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: center;
   justify-content: center;
   color: #8B0000;
+  gap: 10px;
+  width: 100%;
 }
 
 .resText {
@@ -116,101 +132,159 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: 47px;
+  font-size: 28px;
+  gap: 10px;
 }
 
 .resTextImg {
-  width: 47px;
-  margin-right: 5px;
-  padding-top: 10px;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
 }
 
 .phoneText {
-  font-size: 20px;
+  font-size: 15px;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .introPage {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 100%;
+  }
+
+  .introLeftContainer {
+    padding: 30px 20px;
+    min-height: 50vh;
+  }
+
+  .introRightContainer {
+    padding: 30px 20px;
+    min-height: 50vh;
+  }
+
+  .firstWrap {
+    font-size: 28px;
+    padding: 12px 20px;
+  }
+
+  .secondWrap {
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+
+  .sogaeImage {
+    max-width: 300px;
+  }
+
+  .resText {
+    font-size: 24px;
+  }
+
+  .resTextImg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .phoneText {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 768px) {
   .introPage {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 100%;
   }
 
   .introLeftContainer {
-    margin-top: -10px;
-  }
-
-  .introRightContainer {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    margin-top: 113px;
-    padding: 0;
-  }
-
-  .introLeftContainer {
-    padding: 20px 16px;
+    padding: 25px 15px;
+    min-height: auto;
   }
 
   .introLeftFirst {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   .firstWrap {
-    font-size: 18px;
-    text-align: center;
-    white-space: normal;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin: 3px;
-    border-radius: 0;
-    line-height: 1.5;
+    font-size: 24px;
+    padding: 10px 15px;
+    margin-bottom: 12px;
   }
 
   .secondWrap {
     font-size: 14px;
-    text-align: center;
-    line-height: 1.6;
+    margin-bottom: 12px;
   }
 
-  .introLeftThird {
-    font-size: 16px;
-    text-align: center;
+  .introRightContainer {
+    padding: 25px 15px;
+    min-height: auto;
   }
 
   .sogaeImage {
-    content: url('/public/sogae_mobile.png');
-    width: 350px;
-    height: 280px;
-    margin-top: 10px;
+    max-width: 280px;
   }
 
   .resText {
-    flex-direction: column;
-    font-size: 20px;
-    margin-top: 12px;
-    gap: 4px;
-  }
-
-  .resContent {
-    align-items: center;
-    justify-content: center;
-    font-size: x-small;
+    font-size: 22px;
   }
 
   .resTextImg {
-    width: 36px;
-    margin-bottom: 4px;
-    padding: 0;
+    width: 28px;
+    height: 28px;
   }
 
   .phoneText {
-    width: 350px;
-    font-size: 14px;
-    text-align: center;
-    gap: 5px;
+    font-size: 12px;
   }
 }
 
+@media (max-width: 480px) {
+  .introPage {
+    grid-template-columns: 1fr;
+  }
+
+  .introLeftContainer {
+    padding: 20px 10px;
+  }
+
+  .introLeftFirst {
+    margin-bottom: 15px;
+  }
+
+  .firstWrap {
+    font-size: 16px;
+    padding: 6px 10px;
+    margin-bottom: 8px;
+  }
+
+  .secondWrap {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .introRightContainer {
+    padding: 20px 10px;
+    gap: 15px;
+  }
+
+  .sogaeImage {
+    max-width: 230px;
+  }
+
+  .resText {
+    font-size: 18px;
+  }
+
+  .resTextImg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .phoneText {
+    font-size: 10px;
+  }
+}

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
 import styles from "../styles/Menu.module.css";
 
 const menuSections = [
@@ -124,10 +123,15 @@ const Menu = () => {
   }, [imageList.length]);
 
   return (
-    <Container
-      fluid
-      style={{ backgroundColor: "#f3ecdc" }}
-      className="d-flex justify-content-center align-items-center vh-100"
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        backgroundColor: "#f3ecdc",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
       <div className={styles.menuContainer}>
         <div className={styles.menuImageContainer}>
@@ -156,7 +160,7 @@ const Menu = () => {
           ))}
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 

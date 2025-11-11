@@ -3,12 +3,25 @@ import styles from "../styles/Main.module.css";
 
 const Main = () => {
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <img src="/main.png" alt="main" className={styles.mainImage} />
       <div className={styles.mainCaption}>
         <div>
-          <span className={`${styles.mainBox} ${styles.mainBold}`}>" 건강한 한 끼,</span>
-          <span className={`${styles.mainBox} ${styles.mainBold}`}>정성을 더했습니다. "</span>
+          <span className={`${styles.mainBox} ${styles.mainBold}`}>
+            " 건강한 한 끼,
+          </span>
+          <span className={`${styles.mainBox} ${styles.mainBold}`}>
+            정성을 더했습니다. "
+          </span>
         </div>
         <div>
           <span className={`${styles.mainBox} ${styles.mainRegular}`}>

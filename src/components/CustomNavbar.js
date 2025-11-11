@@ -6,9 +6,9 @@ const CustomNavbar = ({ activeKey, onNavClick }) => {
   return (
     <Navbar fixed="top" expand="lg" className={styles.customNavbar}>
       <Navbar.Brand
-        href="#main"
+        href="#home"
         className={styles.customLogo}
-        onClick={() => onNavClick("#main")}
+        onClick={() => onNavClick("#home")}
       >
         <div className={styles.logoContainer}>
           <img src="/ginseng-logo.png" alt="ginseng" className={styles.logoImage} />
@@ -27,6 +27,9 @@ const CustomNavbar = ({ activeKey, onNavClick }) => {
           activeKey={activeKey}
           onSelect={(key) => onNavClick(key)}
         >
+          <Nav.Link eventKey="#home" href="#home" className={`${styles.customNavLink} ${activeKey === "#home" ? styles.active : ""}`}>
+            Home
+          </Nav.Link>
           <Nav.Link eventKey="#intro" href="#intro" className={`${styles.customNavLink} ${activeKey === "#intro" ? styles.active : ""}`}>
             소개
           </Nav.Link>

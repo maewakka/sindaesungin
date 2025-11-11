@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import styles from "../styles/Blog.module.css";
 
 const Main = () => {
@@ -8,10 +7,15 @@ const Main = () => {
   };
 
   return (
-    <Container
-      fluid
-      style={{ backgroundColor: "#f3ecdc" }}
-      className="d-flex justify-content-center align-items-center vh-100"
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        backgroundColor: "#f3ecdc",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
       <div className={styles.blogContainer}>
         <img className={styles.frontImage} src="/front.png" alt="blog" />
@@ -75,7 +79,7 @@ const Main = () => {
           </div>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 

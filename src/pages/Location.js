@@ -1,13 +1,17 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import styles from "../styles/Location.module.css";
 
 const Location = () => {
   return (
-    <Container
-      fluid
-      style={{ backgroundColor: "#f3ecdc" }}
-      className="d-flex justify-content-center align-items-center vh-100"
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        backgroundColor: "#f3ecdc",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
       <div className={styles.locationContainer}>
         <h1 className={styles.title}>오시는 길</h1>
@@ -36,7 +40,7 @@ const Location = () => {
           </div>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 
