@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ReactFullpage from "@fullpage/react-fullpage";
 import CustomNavbar from "./components/CustomNavbar";
 import Main from "./pages/Main";
 import Intro from "./pages/Intro";
@@ -10,44 +9,36 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./styles/App.module.css";
 
 const App = () => {
-  const anchors = ["main", "intro", "menu", "blog", "location"];
   const [activeAnchor, setActiveAnchor] = useState("#main");
+
+  const handleNavClick = (anchor) => {
+    setActiveAnchor(anchor);
+    const element = document.querySelector(anchor);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <>
-      <CustomNavbar activeKey={activeAnchor} onNavClick={setActiveAnchor} />
-      <ReactFullpage
-        scrollingSpeed={1000}
-        anchors={anchors}
-        navigation
-        onLeave={(origin, destination, direction) => {
-          if (destination && destination.index !== undefined) {
-            const nextAnchor = `#${anchors[destination.index]}`;
-            setActiveAnchor(nextAnchor);
-          }
-        }}
-        render={() => {
-          return (
-            <ReactFullpage.Wrapper>
-              <div className={styles.section}>
-                <Main />
-              </div>
-              <div className={styles.section}>
-                <Intro />
-              </div>
-              <div className={styles.section}>
-                <Menu />
-              </div>
-              <div className={styles.section}>
-                <Blog />
-              </div>
-              <div className={styles.section}>
-                <Location />
-              </div>
-            </ReactFullpage.Wrapper>
-          );
-        }}
-      />
+      <CustomNavbar activeKey={activeAnchor} onNavClick={handleNavClick} />
+      <main className={styles.appContainer}>
+        <section id="main" className={styles.section}>
+          <Main />
+        </section>
+        <section id="intro" className={styles.section}>
+          <Intro />
+        </section>
+        <section id="menu" className={styles.section}>
+          <Menu />
+        </section>
+        <section id="blog" className={styles.section}>
+          <Blog />
+        </section>
+        <section id="location" className={styles.section}>
+          <Location />
+        </section>
+      </main>
     </>
   );
 };
