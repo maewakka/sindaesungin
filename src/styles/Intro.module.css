@@ -69,7 +69,7 @@
   padding: 14px 24px;
   border-radius: 8px;
   white-space: normal;
-  font-size: 32px;
+  font-size: clamp(20px, 5vw, 32px);
   color: white;
   background-color: #BADA55;
   text-align: center;
@@ -90,7 +90,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 18px;
-  font-size: 18px;
+  font-size: clamp(14px, 2.5vw, 18px);
   color: #0B3910;
   text-align: center;
   line-height: 1.8;
@@ -153,18 +153,18 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: clamp(20px, 3.5vw, 28px);
   gap: 10px;
 }
 
 .resTextImg {
-  width: 36px;
-  height: 36px;
+  width: clamp(24px, 4vw, 36px);
+  height: clamp(24px, 4vw, 36px);
   object-fit: contain;
 }
 
 .phoneText {
-  font-size: 15px;
+  font-size: clamp(12px, 2vw, 15px);
   text-align: center;
 }
 
@@ -191,30 +191,11 @@
   }
 
   .firstWrap {
-    font-size: 28px;
     padding: 12px 20px;
-  }
-
-  .secondWrap {
-    font-size: 16px;
-    margin-bottom: 14px;
   }
 
   .sogaeImage {
     max-width: 300px;
-  }
-
-  .resText {
-    font-size: 24px;
-  }
-
-  .resTextImg {
-    width: 32px;
-    height: 32px;
-  }
-
-  .phoneText {
-    font-size: 14px;
   }
 }
 
@@ -239,13 +220,11 @@
   }
 
   .firstWrap {
-    font-size: 24px;
     padding: 10px 15px;
     margin-bottom: 12px;
   }
 
   .secondWrap {
-    font-size: 14px;
     margin-bottom: 12px;
   }
 
@@ -256,15 +235,6 @@
 
   .sogaeImage {
     max-width: 280px;
-  }
-
-  .resText {
-    font-size: 22px;
-  }
-
-  .resTextImg {
-    width: 28px;
-    height: 28px;
   }
 
   .phoneText {
@@ -290,23 +260,13 @@
   }
 
   .firstWrap {
-    font-size: 22px;
     padding: 12px 16px;
     margin-bottom: 16px;
   }
 
   .secondWrap {
-    font-size: 15px;
     margin-bottom: 14px;
     line-height: 1.6;
-  }
-
-  .introLeftThird {
-    font-size: 14px;
-  }
-
-  .introLeftFourth {
-    font-size: 13px;
   }
 
   .introRightContainer {
@@ -317,18 +277,5 @@
 
   .sogaeImage {
     max-width: 230px;
-  }
-
-  .resText {
-    font-size: 22px;
-  }
-
-  .resTextImg {
-    width: 28px;
-    height: 28px;
-  }
-
-  .phoneText {
-    font-size: 13px;
   }
 }
