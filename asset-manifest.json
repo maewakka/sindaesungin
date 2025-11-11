@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.43a03586.css",
-    "main.js": "./static/js/main.3088640b.js",
+    "main.js": "./static/js/main.e2bb2187.js",
     "static/js/206.cad83818.chunk.js": "./static/js/206.cad83818.chunk.js",
     "static/media/NotoSerifKR-Bold.otf": "./static/media/NotoSerifKR-Bold.ae766132c89c70bca757.otf",
     "static/media/NotoSerifKR-Medium.otf": "./static/media/NotoSerifKR-Medium.a61b93d53e765fd819bb.otf",
@@ -9,6 +9,6 @@
   },
   "entrypoints": [
     "static/css/main.43a03586.css",
-    "static/js/main.3088640b.js"
+    "static/js/main.e2bb2187.js"
   ]
 }
